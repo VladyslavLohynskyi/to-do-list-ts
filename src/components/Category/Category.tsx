@@ -3,7 +3,9 @@ import './Category.css';
 function Category() {
     return (
     <div className="category-container" >
-    <h2>All Categories</h2>
+        <h2  className='filter-btn'>All Categories</h2>
+        <div className='filter-btn'>Favourites</div>
+        <div className='filter-btn'>Completed</div>
     </div>
   );
 }

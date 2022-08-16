@@ -1,4 +1,15 @@
 .category-container{
     border-right: 1px solid gray;
+    padding-top: 80px;
     padding-right: 50px;
+}
+
+.filter-btn{
+    margin-top: 15px;
+    cursor: pointer;
+    color: var(--main-text-color);
+}
+
+.filter-btn:hover{
+    color: var(--secondary-text-color);
 }

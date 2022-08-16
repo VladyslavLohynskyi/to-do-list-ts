@@ -1,7 +1,9 @@
-.App {
+.app{
   display: flex;
-  justify-content: space-between;
-  margin: auto;
-  width: 80vw;
+  align-items: center;
+  justify-content: center;
 }
 
+.app-container{
+  display: flex;
+}
