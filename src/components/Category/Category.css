@@ -1,5 +1,6 @@
 .category-container{
     border-right: 1px solid gray;
+    width: 30%;
     padding-top: 80px;
     padding-right: 50px;
 }
