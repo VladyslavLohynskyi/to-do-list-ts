@@ -16,3 +16,9 @@
     border: none;
     border-radius: 5px;
 }
+
+.empty-tasks{
+    text-align: center;
+    margin-top: 50px;
+    color: var(--secondary-text-color);
+}

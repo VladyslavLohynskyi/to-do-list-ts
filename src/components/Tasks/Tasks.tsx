@@ -25,9 +25,9 @@ function Tasks() {
     return (
     <div className="tasks-container">
         <h2 className='task-header'>All Tasks</h2>
-        <input className='add-input' onChange={handleChangeText} value={text} onKeyPress={handleAddTask} type="text" placeholder="Add new To Do"/>
+        <input className='add-input' onChange={handleChangeText} value={text} onKeyPress={handleAddTask} type="text" placeholder="Add new Task"/>
         <div className='tasks'>
-            {tasks.map(task=><Task key={task.id as Key} task={task}/>)}
+            {tasks.length?tasks.map(task=><Task key={task.id as Key} task={task}/>):<div className="empty-tasks">No One Tasks</div>}
         </div>
     </div>
   );
