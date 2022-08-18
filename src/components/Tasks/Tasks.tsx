@@ -1,10 +1,11 @@
 import { Key } from "react";
 import {ITask} from "../../enum/enum"
+import { useAppSelector } from "../../hooks/redux";
 import Task from "../Task/Task";
 import './Tasks.css';
 
 function Tasks() {
-    const tasks:ITask[] = [{id:"1",text:"Go to Football"},{id:"2",text:"Codding"}]
+    const {tasks,error,isLoading} = useAppSelector((state)=>state.taskReducer)
     return (
     <div className="tasks-container">
         <h2 className='task-header'>All Tasks</h2>
