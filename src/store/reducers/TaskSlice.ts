@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ITask } from "../../enum/enum"
 
 interface TaskState{
@@ -17,7 +17,9 @@ export const taskSlice = createSlice({
     name: 'task',
     initialState,
     reducers: {
-
+        addTask(state, action: PayloadAction<ITask>){
+            state.tasks = [...state.tasks,action.payload];
+        }
     }
 })
 
