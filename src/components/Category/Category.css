@@ -43,5 +43,9 @@
           border-right: 1px solid var(--secondary-text-color);
           border-bottom: none
         }
+    .filter-btn-active,.filter-btn{
+            text-align: left;
+        }
+        
     
   }

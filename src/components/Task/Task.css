@@ -10,6 +10,10 @@
 
 .task-text{
     align-self: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%
 }
 
 .delete-btn{
@@ -89,3 +93,4 @@
     -ms-transform: rotate(45deg) scale(3);
     transform: rotate(45deg) scale(3);
   }
+
