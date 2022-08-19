@@ -18,7 +18,7 @@ function Tasks() {
     const handleAddTask = (e : React.KeyboardEvent<HTMLInputElement>)=> {
         if (e.key === "Enter" && text) {
             setText("")
-            dispatch(addTask({text, id:uuidv4()}))
+            dispatch(addTask({text, checked:false, id:uuidv4()}))
         }
       };
 

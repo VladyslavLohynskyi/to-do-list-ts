@@ -1,6 +1,6 @@
 import './Task.css';
 import {ITask} from "../../types/interfaces"
-import {FC} from 'react';
+import React, {FC} from 'react';
 import trash from "../../assets/images/trash.svg"
 import { taskSlice } from '../../store/reducers/TaskSlice';
 import { useAppDispatch } from '../../hooks/redux';
@@ -11,15 +11,20 @@ interface IProps {
 
 
 const Task:FC<IProps> = ({task}) => {
-    const {deleteTask} = taskSlice.actions;
+    const {deleteTask,checkTask} = taskSlice.actions;
     const dispatch = useAppDispatch()
     const handleClickDelete = () => {
         dispatch(deleteTask(task.id))
     }
+
+    const handleClickCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.checked)
+        dispatch(checkTask({id:task.id,checked:e.target.checked}))
+    }
     return (
     <div className="task-container">
         <label className="container">
-            <input type="checkbox"/>
+            <input type="checkbox" checked={task.checked} onChange={handleClickCheck}/>
             <span className="checkmark"></span>
         </label>
         <div className='task-text'>{task.text}</div>

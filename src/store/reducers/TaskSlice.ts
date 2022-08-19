@@ -1,15 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ITask } from "../../types/interfaces"
 
-interface TaskState{
+interface ITaskState{
     tasks: ITask[];
     isLoading: boolean;
     error: string;   
 }
 
+interface ICheckedTask{
+    id:string;
+    checked:boolean;
+}
 
-const initialState: TaskState = {
-    tasks: [{id:"1",text:"Go to Football"},{id:"2",text:"Codding"},{id:"3",text:"CS:GO"}],
+
+const initialState: ITaskState = {
+    tasks: [],
     isLoading: false,
     error: ""
 }
@@ -27,6 +32,11 @@ export const taskSlice = createSlice({
         },
         deleteTask(state, action: PayloadAction<string>){
             state.tasks = state.tasks.filter(task=>task.id !== action.payload)
+            localStorage.setItem("tasks",JSON.stringify(state.tasks))
+        },
+        checkTask(state,action: PayloadAction<ICheckedTask>){
+            state.tasks = state.tasks.map(task=>task.id === action.payload.id
+                ?{...task,checked:action.payload.checked}:task);
             localStorage.setItem("tasks",JSON.stringify(state.tasks))
         }
     }
