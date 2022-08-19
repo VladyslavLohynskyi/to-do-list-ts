@@ -5,7 +5,19 @@
 }
 
 .app-container{
-  display: flex;
-  width: 80vw;
+  width: 100vw;
   height: 99vh;
+}
+
+@media screen and (min-width:900px) {
+  .app-container{
+    display: flex;
+    padding-left: 45px;
+  }
+}
+
+@media screen and (min-width:1030px) {
+  .app-container{
+    width: 80vw;
+  }
 }
