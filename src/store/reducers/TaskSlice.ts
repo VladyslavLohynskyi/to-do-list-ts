@@ -1,8 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CategoryEnum } from "../../types/enum";
 import { ITask } from "../../types/interfaces"
 
 interface ITaskState{
     tasks: ITask[];
+    category: CategoryEnum;
     isLoading: boolean;
     error: string;   
 }
@@ -15,6 +17,7 @@ interface ICheckedTask{
 
 const initialState: ITaskState = {
     tasks: [],
+    category: CategoryEnum.ALL_CATEGORIES,
     isLoading: false,
     error: ""
 }
@@ -24,7 +27,7 @@ export const taskSlice = createSlice({
     initialState,
     reducers: {
         getTasks(state, action:PayloadAction<ITask[]>){
-            state.tasks = action.payload
+            state.tasks = action.payload.sort((a,b)=>a.createdAt - b.createdAt)
         },
         addTask(state, action: PayloadAction<ITask>){
             state.tasks = [...state.tasks,action.payload];
@@ -38,6 +41,9 @@ export const taskSlice = createSlice({
             state.tasks = state.tasks.map(task=>task.id === action.payload.id
                 ?{...task,checked:action.payload.checked}:task);
             localStorage.setItem("tasks",JSON.stringify(state.tasks))
+        },
+        setCategory(state, action: PayloadAction<CategoryEnum>){
+            state.category = action.payload;
         }
     }
 })

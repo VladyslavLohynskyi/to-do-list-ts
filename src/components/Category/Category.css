@@ -6,6 +6,7 @@
 }
 
 .filter-btn{
+    display: inline-block;
     margin-top: 15px;
     cursor: pointer;
     color: var(--main-text-color);
@@ -13,4 +14,20 @@
 
 .filter-btn:hover{
     color: var(--secondary-text-color);
+}
+
+.radio-menu{
+    align-self: center;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.filter-btn-active{
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 700;
+    color: var(--main-text-color);
 }
