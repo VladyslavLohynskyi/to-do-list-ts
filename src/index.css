@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap');
 
+* {
+  font-family: var(--font-style);
+  font-size: 30px;
+}
 
 :root{
   --main-text-color: rgba(0,0,0,1);
@@ -7,4 +11,10 @@
   --complete-text-color: rgba(235,87,87,1);
   --check-mark-color: rgba(57, 174, 104, 1);
   --font-style: 'Arimo', sans-serif;
+}
+
+
+h1, h2,h3{
+  margin: 0;
+  font-weight: 700;
 }
