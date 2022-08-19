@@ -7,4 +7,5 @@
 .app-container{
   display: flex;
   width: 80vw;
+  height: 99vh;
 }

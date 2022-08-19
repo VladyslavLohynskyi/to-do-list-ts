@@ -18,11 +18,16 @@ export const taskSlice = createSlice({
     name: 'task',
     initialState,
     reducers: {
+        getTasks(state, action:PayloadAction<ITask[]>){
+            state.tasks = action.payload
+        },
         addTask(state, action: PayloadAction<ITask>){
             state.tasks = [...state.tasks,action.payload];
+            localStorage.setItem("tasks",JSON.stringify(state.tasks))
         },
         deleteTask(state, action: PayloadAction<string>){
             state.tasks = state.tasks.filter(task=>task.id !== action.payload)
+            localStorage.setItem("tasks",JSON.stringify(state.tasks))
         }
     }
 })
