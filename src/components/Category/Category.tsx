@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { taskSlice } from '../../store/reducers/TaskSlice';
 import { CategoryEnum } from '../../types/enum';
 import './Category.css';
 
 function Category() {
-    const {tasks, category} = useAppSelector(state=>state.taskReducer);
+    const {category} = useAppSelector(state=>state.taskReducer);
     const {setCategory} = taskSlice.actions
     const dispatch = useAppDispatch()
     

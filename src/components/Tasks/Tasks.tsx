@@ -5,7 +5,7 @@ import Task from "../Task/Task";
 import './Tasks.css';
 import { v4 as uuidv4 } from "uuid";
 import { CategoryEnum } from "../../types/enum";
-import { ITask } from "../../types/interfaces";
+
 
 function Tasks() {
     const [text, setText] = useState('')
