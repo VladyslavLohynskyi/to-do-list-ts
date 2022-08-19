@@ -18,7 +18,6 @@ const Task:FC<IProps> = ({task}) => {
     }
 
     const handleClickCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.checked)
         dispatch(checkTask({id:task.id,checked:e.target.checked}))
     }
     return (
